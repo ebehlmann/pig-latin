@@ -43,3 +43,23 @@ describe('pigLatin', function () {
 		pigLatin('I like apples').should.equal('Iay ikelay applesay');
 	});
 });
+
+describe('isQ', function() {
+	it('Should return true if the letter is a q', function() {
+		isQ('q').should.equal(true);
+	});
+	
+	it('Should return false if the letter is not a q', function() {
+		isQ('e'). should.equal(false);
+	});
+});
+
+describe('isU', function() {
+	it('Should return true if the letter is a u', function() {
+		isU('u').should.equal(true);
+	});
+	
+	it('Should return false if the letter is not a u', function() {
+		isU('e'). should.equal(false);
+	});
+});

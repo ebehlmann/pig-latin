@@ -10,6 +10,22 @@ var isCon = function(word) {
 	return !isVowel(word);
 }
 
+var isQ = function(letter) {
+	if (letter === 'Q' || letter === 'q') {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+var isU = function(letter) {
+	if (letter === 'U' || letter === 'u') {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 var addAy = function(word) {
 	if (isVowel(word)) {
 		return word + 'ay';
