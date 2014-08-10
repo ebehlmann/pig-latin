@@ -38,7 +38,11 @@ var moveCon = function(word) {
 	if (isVowel(word)===false) {
 		var position = -1;
 		for (var i=0; i<word.length; i++) {
-			if (isCon(word.charAt(i))) {
+			if (isQ(word.charAt(i))) {
+				if (isU(word.charAt(i+1))) {
+					position = position + 2;
+				}
+			} else if (isCon(word.charAt(i))) {
 				position = position + 1;
 			} else {
 				break;
