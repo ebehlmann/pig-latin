@@ -26,8 +26,9 @@ var moveCon = function(word) {
 	var position = -1;
 	for (var i=0; i<word.length; i++) {
 		if (isQ(word.charAt(i))) {
+			position = position + 1;
 			if (isU(word.charAt(i+1))) {
-				position = position + 2;
+				position = position + 1;
 			}
 		} else if (isVowel(word.charAt(i))===false) {
 			position = position + 1;
