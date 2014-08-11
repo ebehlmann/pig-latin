@@ -6,10 +6,6 @@ var isVowel = function(word) {
 	return ['a', 'e', 'i', 'o', 'u'].indexOf(char) !== -1;
 }
 
-var isCon = function(word) {
-	return !isVowel(word);
-}
-
 var isQ = function(letter) {
 	if (letter === 'Q' || letter === 'q') {
 		return true;
@@ -26,32 +22,20 @@ var isU = function(letter) {
 	}
 }
 
-var addAy = function(word) {
-	if (isVowel(word)) {
-		return word + 'ay';
-	} else {
-		return false;
-	}
-}
-
 var moveCon = function(word) {
-	if (isVowel(word)===false) {
-		var position = -1;
-		for (var i=0; i<word.length; i++) {
-			if (isQ(word.charAt(i))) {
-				if (isU(word.charAt(i+1))) {
-					position = position + 2;
-				}
-			} else if (isCon(word.charAt(i))) {
-				position = position + 1;
-			} else {
-				break;
+	var position = -1;
+	for (var i=0; i<word.length; i++) {
+		if (isQ(word.charAt(i))) {
+			if (isU(word.charAt(i+1))) {
+				position = position + 2;
 			}
+		} else if (isVowel(word.charAt(i))===false) {
+			position = position + 1;
+		} else {
+			break;
 		}
-		return word.slice(position+1, word.length) + word.slice(0, position+1) + 'ay';	
-	} else {
-		return false;
 	}
+	return word.slice(position+1, word.length) + word.slice(0, position+1) + 'ay';	
 }
 
 var wordBreak = function(sentence) {
@@ -62,13 +46,8 @@ var pigLatin = function(sentence) {
 	var pigLatinized = [];
 	var words = wordBreak(sentence);
 	words.forEach(function(word) {
-		if (isCon(word)) {
-			word = moveCon(word);
-			pigLatinized.push(word);
-		} else {
-			word = addAy(word);
-			pigLatinized.push(word);
-		};
+		word = moveCon(word);
+		pigLatinized.push(word);
 	});
 	return pigLatinized.join(' ');
 };

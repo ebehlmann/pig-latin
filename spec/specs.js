@@ -8,19 +8,19 @@ describe('isVowel', function() {
 	});
 });
 
-describe('addAy', function() {
-	it('Should not add ay to a word that does not start with a vowel', function() {
-		addAy('word').should.equal(false);
-	});
-
-	it('Should add ay to a word that starts with a vowel', function() {
-		addAy('apple').should.equal('appleay');
-	});
-});
+// describe('addAy', function() {
+// 	it('Should not add ay to a word that does not start with a vowel', function() {
+// 		addAy('word').should.equal(false);
+// 	});
+// 
+// 	it('Should add ay to a word that starts with a vowel', function() {
+// 		addAy('apple').should.equal('appleay');
+// 	});
+// });
 
 describe('moveCon', function() {
-	it('Should leave alone a word that starts with a vowel', function() {
-		moveCon('apple').should.equal(false);
+	it('Should add ay to a word that starts with a vowel', function() {
+		moveCon('apple').should.equal('appleay');
 	}); 
 	
 	it('Should move first consonants to the end and add ay', function() {
@@ -34,7 +34,7 @@ describe('moveCon', function() {
 
 describe('wordBreak', function() {
 	it('Should split words in a sentence into an array', function() {
-		wordBreak('I like apples').should.equal(['I', 'like', 'apples']);
+		wordBreak('I like apples').should.deep.equal(['I', 'like', 'apples']);
 	});
 });
 
