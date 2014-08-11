@@ -1,10 +1,10 @@
 describe('isVowel', function() {
 	it('Should be false if first letter is not a, e, i, o, u', function() {
-		isVowel('word').should.equal(false);
+		isVowel('w').should.equal(false);
 	});
 	
 	it('Should be true if first letter is a, e, i, o, u', function() {
-		isVowel('apple').should.equal(true);
+		isVowel('a').should.equal(true);
 	});
 });
 
@@ -50,7 +50,7 @@ describe('isQ', function() {
 	});
 	
 	it('Should return false if the letter is not a q', function() {
-		isQ('e'). should.equal(false);
+		isQ('e').should.equal(false);
 	});
 });
 

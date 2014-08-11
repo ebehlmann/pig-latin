@@ -1,25 +1,13 @@
-// For words that start with a vowel, add "ay" to the end
-
-var isVowel = function(word) {
-	var char = word.slice(0,1);
-	// var char = word[0];
-	return ['a', 'e', 'i', 'o', 'u'].indexOf(char) !== -1;
+var isVowel = function(letter) {
+	return ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'].indexOf(letter) !== -1;
 }
 
 var isQ = function(letter) {
-	if (letter === 'Q' || letter === 'q') {
-		return true;
-	} else {
-		return false;
-	}
+	return (letter === 'Q' || letter === 'q'); 
 }
 
 var isU = function(letter) {
-	if (letter === 'U' || letter === 'u') {
-		return true;
-	} else {
-		return false;
-	}
+	return (letter === 'U' || letter === 'u');
 }
 
 var moveCon = function(word) {
